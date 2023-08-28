@@ -1,14 +1,17 @@
 const mongoose=require("mongoose")
-//console.log("mongo");
-const logininfoschema= new mongoose.Schema({
-name:String,
-phone:Number,
-email:String,
-location:String,
-place:String,
-photo:String
-
-})
+console.log("mongostyle");
 
 
-module.exports =mongoose.model("Userinfo",logininfoschema);
+function tackstructure(a,b,c)
+{
+
+    const schima= new mongoose.Schema(a)
+    mongoose.model(b,schima).create(c)
+}
+function getsome(a,b){
+    const schima= new mongoose.Schema(a)
+   return mongoose.model(b,schima)
+}
+
+module.exports.senddata=tackstructure
+module.exports.model=getsome
