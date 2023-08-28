@@ -28,15 +28,7 @@ const profiledata =async(req,res)=>{
     await upload(req.body,"profiledata");
 }
 
-var mong1= model.model({
-    name:String,
-    phone:Number,
-    email:String,
-    location:String,
-    place:String,
-    photo:String
-    
-    },"userinfo")
+
 const getingoEn =async(req,res)=>{
    // res.send("profile")
     console.log("progilr");
