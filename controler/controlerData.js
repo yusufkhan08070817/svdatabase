@@ -1,8 +1,7 @@
 const model=require('../logininfoSyntex')
 const upload=require("../data")
 console.log("control");
-const Home=async(req,res)=>{
-    var mong= model.model({
+  var mong= model.model({
         name:String,
         phone:Number,
         email:String,
@@ -11,6 +10,8 @@ const Home=async(req,res)=>{
         photo:String
         
         },"userinfo")
+const Home=async(req,res)=>{
+  
 
     const data=await mong.find({})
     res.status(200).json({data})
