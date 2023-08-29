@@ -10,6 +10,7 @@ console.log("control");
         photo:String
         
         },"userinfo")
+        
 const Home=async(req,res)=>{
   
 
@@ -46,5 +47,18 @@ const getingoEn =async(req,res)=>{
         console.log(error);
     }
 }
+const profiledataput=async(req,res)=>{
+    console.log(req.body);
 
-module.exports={Home,userinfodata,profiledata,getingoEn}
+    try {
+        const result = await mong.updateOne({ email: req.body.email }, { $set: req.body });
+        console.log(result); // Handle the result here
+      } catch (err) {
+        console.error(err); // Handle any errors here
+      }
+      
+    res.status(200).json(req.body)
+
+}
+
+module.exports={Home,userinfodata,profiledata,getingoEn,profiledataput}
