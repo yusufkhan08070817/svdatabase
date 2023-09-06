@@ -10,7 +10,7 @@ try {
     {
         case  "userinfodata" :{ await schy.senddata({name:String,phone:Number,email:String,location:String,place:String, photo:String},"Userinfo",data); break }
 case "profiledata" :{ console.log(routes);
-     await schy.senddata({Name:String,Phone:Number,Email:String,Location:String,Place_of_use:String},"presnolinfo",data);break}
+     await schy.senddata({Name:String,Phone:Number,Email:String,Location:String,Place_of_use:String, yourArrayField: {type: [String],default: [], },},"presnolinfo",data);break}
     }
    
     

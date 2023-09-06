@@ -8,14 +8,8 @@ console.log("control");
         location:String,
         place:String,
         photo:String,
-        yourArrayField: {
-            callphone: [Number], // Replace 'String' with the data type of your array elements
-            default: [],    // An empty array by default, or provide an initial array
-          },
-          yourArrayField: {
-            tocall: [Number], // Replace 'String' with the data type of your array elements
-            default: [],    // An empty array by default, or provide an initial array
-          },
+        calllist: {type: [Number],default: [], },
+        tocalllist: {type: [Number],default: [], },
         
         },"userinfo")
         
@@ -48,7 +42,7 @@ const getingoEn =async(req,res)=>{
     console.log(name,email);
     try {
        
-        const data=await mong.find({ name: name, email: email })
+        const data=await mong1.find({ name: name, email: email })
         console.log(data);
         res.status(200).json({data}) 
     } catch (error) {
