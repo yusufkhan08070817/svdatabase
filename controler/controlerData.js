@@ -7,7 +7,15 @@ console.log("control");
         email:String,
         location:String,
         place:String,
-        photo:String
+        photo:String,
+        yourArrayField: {
+            callphone: [Number], // Replace 'String' with the data type of your array elements
+            default: [],    // An empty array by default, or provide an initial array
+          },
+          yourArrayField: {
+            tocall: [Number], // Replace 'String' with the data type of your array elements
+            default: [],    // An empty array by default, or provide an initial array
+          },
         
         },"userinfo")
         
@@ -40,7 +48,7 @@ const getingoEn =async(req,res)=>{
     console.log(name,email);
     try {
        
-        const data=await mong1.find({ name: name, email: email })
+        const data=await mong.find({ name: name, email: email })
         console.log(data);
         res.status(200).json({data}) 
     } catch (error) {
@@ -60,5 +68,10 @@ const profiledataput=async(req,res)=>{
     res.status(200).json(req.body)
 
 }
+const abbc=async (req,res)=>{
+    console.log(res.send("hello"));
+    var name = req.query. params
+    console.log(name);
+}
 
-module.exports={Home,userinfodata,profiledata,getingoEn,profiledataput}
+module.exports={Home,userinfodata,profiledata,getingoEn,profiledataput,abbc}
